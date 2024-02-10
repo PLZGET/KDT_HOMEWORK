@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            height: 800px;
+            border: 4px solid blueviolet;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .main-container {
+            /*background: lightcoral;*/
+            background: url("background_space.jpg");
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            border-radius: 20px;
+
+            /*텍스트 박스 가운데 배치*/
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .text-shadow {
+            /*텍스트에 그림자 효과*/
+            text-shadow: 7px 7px gray;
+        }
+        .text {
+            font-size: 40px;
+            font-weight: bold;
+            text-align: center;
+            color: lightyellow;
+            font-family: 'Sixtyfour', sans-serif;
+
+            transition: all 1s;
+        }
+
+        .text-blink {
+            animation: blink 1s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .main-container:hover {
+            animation: moveOnHover 1s infinite;
+        }
+
+        @keyframes moveOnHover {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+        /*회전*/
+        .spin {
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .title {
+            font-weight: bold;
+            font-size: 70px;
+            margin: 70px;
+        }
+    /*  title에 마우스 올리면 그림자*/
+        .title:hover{
+            text-shadow: 7px 7px gray;
+            color: tomato;
+        }
+
+        .text:hover {
+            color: darkblue;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="main-container">
+
+            <h1 class="text title">Memorable phrases</h1>
+            <p class="text text-blink text-shadow">What makes life valuable is that it doesn't last forever</p>
+            <p class="text text-blink text-shadow">what makes it precious is that it ends</p>
+
+        </div>
+    </div>
+
+</body>
+</html>
